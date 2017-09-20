@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN"
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="fragments/adminModel">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script type="text/javascript" src="/basic/validate/bootstrapValidator.js"></script>
+		<title>添加企业号用户</title>
+	</head>
+	<body>
+		<div th:fragment="content" th:remove="tag">
+			<div class="header lighter smaller blue">
+				<h3><i class="fa fa-plus"></i>&nbsp;添加用户 </h3>
+					</div>
+
+			<form method="POST" th:object="${user}" id="dataForm">
+				<div class="form-group form-group-lg">
+					<label for="userid">用户id</label>
+					<input type="text" name="userid" th:value="${user.userid}" class="form-control" id="userid" placeholder="请输入微信用户ID"/>
+				</div>
+				<div class="form-group form-group-lg">
+					<label for="userName">姓名</label>
+					<input type="text" name="userName" th:value="${user.userName}" class="form-control" id="userName" placeholder="请输入用户姓名"/>
+				</div>
+				<div class="form-group form-group-lg">
+					<label for="mobile">手机号</label>
+					<input type="text" name="mobile" th:value="${user.mobile}" class="form-control" id="mobile" placeholder="请输入手机号"/>
+				</div>
+				<div class="form-group form-group-lg">
+					<label for="email">邮箱</label>
+					<input type="text" name="email" class="form-control" id="email" placeholder="请输入邮箱"/>
+				</div>
+				<div class="form-group form-group-lg">
+					<div class="input-group input-group-lg">
+						<div class="input-group-addon">用户状态</div>
+						<div class="form-control">
+							<input type="radio" name="status" value="1" id="status_1" th:checked="${user.status == 1}?'checked'"/><label for="status_1">启用</label>
+							<input type="radio" name="status" value="0" id="status_0" th:checked="${user.status == 0}?'checked'"/><label for="status_0">停用</label>
+						</div>
+					</div>
+				</div>
+				<input type="hidden" name="token" th:value="${session.token}"/>
+				<button type="submit" class="btn btn-primary">确定提交</button>
+			</form>
+			<script type="text/javascript">
+				jQuery(function($) {
+					$('#dataForm').bootstrapValidator({
+		//		        live: 'disabled',
+						message: '验证不通过',
+						feedbackIcons: {
+							valid: 'glyphicon glyphicon-ok',
+							invalid: 'glyphicon glyphicon-remove',
+							validating: 'glyphicon glyphicon-refresh'
+						},
+						fields: {
+							userid: {
+								validators: {
+									notEmpty: {
+										message: '请输入用户ID'
+									}
+								}
+							},
+							userName: {
+								validators: {
+									notEmpty: {
+										message: '请输入姓名'
+									},
+									stringLength: {
+										min: 1,
+										max: 10,
+										message: '姓名长度必须在1~10之间'
+									}
+								}
+							}
+						}
+					});
+				});
+			</script>
+		</div>
+	</body>
+</html>
