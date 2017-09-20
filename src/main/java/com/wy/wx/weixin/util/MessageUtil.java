@@ -15,9 +15,6 @@ import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
-
-import com.wy.wx.weixin.jh.DataInfo;
-import com.wy.wx.weixin.jh.JUhe;
 import com.wy.wx.weixin.model.News;
 import com.wy.wx.weixin.model.NewsMessage;
 import com.wy.wx.weixin.model.TextMessage;
@@ -134,24 +131,24 @@ public class MessageUtil {
 		NewsMessage nm = new NewsMessage();
 	
 		
-		List<DataInfo> df = JUhe.xiaoHuaData();
-		
-		for(int i=0 ;i <5 ; i++){
-			News  n = new News();
-			n.setTitle(df.get(i).getContent());
-			n.setPicUrl(df.get(i).getUrl());
-			n.setUrl(df.get(i).getUrl());
-			n.setDescription("天凉了！天凉了！出差一个人住酒店，半夜电话响了，是一个男孩的声音：“秋夜漫漫，是不是感到空虚寂寞冷？提供上门服务哦。”我鼓足勇气说：“好的。”没多久就听到了敲门声，打开门果然是个帅气小鲜肉，一边从随身的包里掏东西一边说：“只要88元，100%全棉秋裤，买一件吧，穿上就不冷了。”剑神葡萄）");
-			newsList.add(n);
-		}
-		
-		
+//		List<DataInfo> df = JUhe.xiaoHuaData();
+//		
+//		for(int i=0 ;i <5 ; i++){
+//			News  n = new News();
+//			n.setTitle(df.get(i).getContent());
+//			n.setPicUrl(df.get(i).getUrl());
+//			n.setUrl(df.get(i).getUrl());
+//			n.setDescription("天凉了！天凉了！出差一个人住酒店，半夜电话响了，是一个男孩的声音：“秋夜漫漫，是不是感到空虚寂寞冷？提供上门服务哦。”我鼓足勇气说：“好的。”没多久就听到了敲门声，打开门果然是个帅气小鲜肉，一边从随身的包里掏东西一边说：“只要88元，100%全棉秋裤，买一件吧，穿上就不冷了。”剑神葡萄）");
+//			newsList.add(n);
+//		}
+//		
+//		
 		News  n1 = new News();
-		n1.setTitle("秋夜漫漫，是不是感到空虚寂寞冷？提供上门服务哦");
-		n1.setPicUrl("http://openwan.cn/assets/img/backgrounds/2.jpg");
-		n1.setUrl("www.wy.wx.cn");
-		n1.setDescription("天凉了！天凉了！出差一个人住酒店，半夜电话响了，是一个男孩的声音：“秋夜漫漫，是不是感到空虚寂寞冷？提供上门服务哦。”我鼓足勇气说：“好的。”没多久就听到了敲门声，打开门果然是个帅气小鲜肉，一边从随身的包里掏东西一边说：“只要88元，100%全棉秋裤，买一件吧，穿上就不冷了。”剑神葡萄）");
-		
+//		n1.setTitle("秋夜漫漫，是不是感到空虚寂寞冷？提供上门服务哦");
+//		n1.setPicUrl("http://openwan.cn/assets/img/backgrounds/2.jpg");
+//		n1.setUrl("www.wy.wx.cn");
+//		n1.setDescription("天凉了！天凉了！出差一个人住酒店，半夜电话响了，是一个男孩的声音：“秋夜漫漫，是不是感到空虚寂寞冷？提供上门服务哦。”我鼓足勇气说：“好的。”没多久就听到了敲门声，打开门果然是个帅气小鲜肉，一边从随身的包里掏东西一边说：“只要88元，100%全棉秋裤，买一件吧，穿上就不冷了。”剑神葡萄）");
+//		
 		
 		
 		newsList.add(n1);

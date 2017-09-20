@@ -17,8 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSONObject;
-import com.wy.wx.model.VpnEmail;
-import com.wy.wx.service.EmailService;
 import com.wy.wx.util.SHA;
 import com.wy.wx.weixin.model.TextMessage;
 import com.wy.wx.weixin.util.MessageUtil;
@@ -34,11 +32,7 @@ import springfox.documentation.annotations.ApiIgnore;
 @Controller
 @ApiIgnore  //忽略在swagger中显示
 @RequestMapping("/")
-public class WeiXinController {
-	
-	@Autowired
-	private EmailService emailService;
-	
+public class WeiXinController {	
 	private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	
 	@ResponseBody
@@ -111,10 +105,10 @@ public class WeiXinController {
 				return msg = MessageUtil.initText(toUserName, fromUserName, MessageUtil.menuText());
 			}else if("v".equals(content) || "V".equals(content)){
 				StringBuffer sb = new StringBuffer();
-				List<VpnEmail> list = emailService.queryAll();
-				for(VpnEmail vp :list){
-					sb.append(vp.getEmail()+"\n");
-				}
+//				List<VpnEmail> list = emailService.queryAll();
+//				for(VpnEmail vp :list){
+//					sb.append(vp.getEmail()+"\n");
+//				}
 				return msg = MessageUtil.initText(toUserName, fromUserName,sb.toString());
 			}
 			

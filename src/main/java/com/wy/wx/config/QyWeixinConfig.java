@@ -6,9 +6,9 @@ package com.wy.wx.config;
  */
 public class QyWeixinConfig {
 	//门店互动平台
-	public static final String CORPID = "";
+	public static final String CORPID = "wx19d8777d071af48a";
 	public static final String AGENTID = "0";
-	public static final String SECRET = "";
+	public static final String SECRET = "T0IkUMgjp33-sQ4zwPl08M9Yqw51-wSsKVlgju3Co3-J6YoLURBKUTFDZjbhBCa5";
 	//获取access_token
 	public static final String ACCESS_TOKEN_URL = "https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid="+CORPID+"&corpsecret="+SECRET;
 	//读取成员

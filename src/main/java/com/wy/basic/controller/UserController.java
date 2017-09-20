@@ -32,6 +32,7 @@ import java.util.List;
  * Created by zsl-pc on 2016/9/6.
  */
 @Controller
+@ApiIgnore  //忽略在swagger中显示
 @RequestMapping(value="admin/user")
 @AdminAuth(name = "用户管理", psn="权限管理", orderNum = 3, pentity=0, porderNum=2)
 public class UserController {
